@@ -11,8 +11,8 @@ function App(){
     const dispatch = useDispatch();
 
     const onIdRoleSubmit =(id:string,role:string)=>{
-        dispatch((setId(role)))
-        dispatch(setRole(id))
+        dispatch((setId(id)))
+        dispatch(setRole(role))
     }
 
     return(
