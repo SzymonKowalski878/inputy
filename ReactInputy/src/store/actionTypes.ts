@@ -1,6 +1,0 @@
-export enum ActionType{
-    CHANGE_FONT_SIZE = "CHANGE_FONT_SIZE",
-    CHANGE_COLOR_MODE = "CHANGE_COLOR_MODE",
-    SET_USER_ID = "SET_USER_ID",
-    SET_ROLE = "SET_ROLE"
-}
