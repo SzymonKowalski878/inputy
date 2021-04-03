@@ -1,5 +1,6 @@
 import React,{ChangeEvent} from 'react'; 
-
+import {QueryClient,QueryClientProvider} from "react-query";
+import {Logog} from './LoginFunction'
 interface userIdPasswordProps{
     dataProps(id:string,role:string):void;
 }
@@ -33,6 +34,7 @@ export const UserIdPasswordInput:React.FC<userIdPasswordProps> =({dataProps})=>{
             dataProps(result,idState)
             setIdState("");
             setPasswordState("");
+            
         }else{
             alert("Niepoprawne dane logowania");
             setIdState("");
@@ -40,13 +42,18 @@ export const UserIdPasswordInput:React.FC<userIdPasswordProps> =({dataProps})=>{
         }
     }
 
+    const queryClient = new QueryClient();
+
     return(
         <>
+            <QueryClientProvider client={queryClient}>
             <div>
                 <input value={idState} onChange={onIdChange} type="text" name="idInput" id="idInput" placeholder="id"></input>
                 <input value={passwordState} onChange={onPasswordChange} type="text" name="passwordInput" id="passwordInput" placeholder="password"></input>
                 <button onClick={onSubmitClick}>Submit</button>
             </div>
+            <Logog/>
+            </QueryClientProvider>
         </>
     )
 }
