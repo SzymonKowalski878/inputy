@@ -20,7 +20,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel serve ./src/index.html"
+    "start": "parcel serve ./src/index.html",
+    "openapi": "openapi-generator-cli generate -i ./swagger.json -g typescript-fetch -o src/api/generated --additional-properties=typescriptThreePlus=true,useSingleRequestParameter=false"
   },
   "keywords": [],
   "author": "",
