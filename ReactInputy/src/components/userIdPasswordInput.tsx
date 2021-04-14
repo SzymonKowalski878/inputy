@@ -1,5 +1,7 @@
 import React,{ChangeEvent} from 'react'; 
 import { useQuery } from 'react-query';
+import {UserApi} from '../api/generated/apis'
+
 
 interface userIdPasswordProps{
     dataProps(id:string,role:string):void;
@@ -29,7 +31,7 @@ export const UserIdPasswordInput:React.FC<userIdPasswordProps> =({dataProps})=>{
         }
         return null;
     }
-
+    
     type Token = {
         token:string;
     }
@@ -44,7 +46,7 @@ export const UserIdPasswordInput:React.FC<userIdPasswordProps> =({dataProps})=>{
 
 
     async function getToken(params:QueryKey){
-        const[xd,loginData] = params.queryKey;
+        const[,loginData] = params.queryKey;
         var UserIdAndPassword ={
             Id:params.queryKey[1].Id,
             Password:params.queryKey[1].Password
@@ -82,7 +84,10 @@ export const UserIdPasswordInput:React.FC<userIdPasswordProps> =({dataProps})=>{
         console.log(error.message);
         
     }
-    data? console.log({data}):null;
+    data? 
+    console.log({data})
+    
+    :null;
     
     return(
         <>
