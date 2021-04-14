@@ -4,6 +4,9 @@ import {UserIdPasswordInput} from './components/userIdPasswordInput'
 import { useDispatch, useSelector } from 'react-redux'
 import {setId,setRole} from './store/actions'
 import {QueryClient,QueryClientProvider} from 'react-query'
+import {LoginComponent} from './components/loginComponent'
+import {RegisterAccountComponent} from './components/registerAccountComponent'
+import {RegisterDonatorComponent} from './components/registerDonatorComponent'
 const Container = styled('div')`
     
 `
@@ -21,10 +24,10 @@ function App(){
     return(
         <>
             <QueryClientProvider client={queryClient}>
-            <UserIdPasswordInput dataProps={onIdRoleSubmit}/>
-
-            
-
+            {/*<UserIdPasswordInput dataProps={onIdRoleSubmit}/>
+            <LoginComponent dataProps={onIdRoleSubmit}/>
+            <RegisterAccountComponent/>*/}
+            <RegisterAccountComponent/>
             </QueryClientProvider>
         </>
     )
